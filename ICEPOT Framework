@@ -1,0 +1,415 @@
+Scenario: #2 File Upload Feature
+------------------------------
+## 1. Context & Problem Identification## ❌ The Weak Prompt
+
+Generate test cases for file upload.
+
+## 🔍 Missing Elements Breakdown
+
+* Technical Constraints: Absent file extension rules (.jpeg, .png, .pdf) and specific upper/lower boundary size limitations.
+* Validation Rules: No distinct pass/fail evaluation criteria or expected user error messages.
+* Quality Metrics: Completely lacks crucial security testing parameters (e.g., malicious payloads, extension spoofing).
+* Enterprise Structure: No clear formatting rules, metadata columns, execution metrics, or test lead persona.
+
+-----------------------------------------------------------------------------------------------------------------
+## 2. Optimized Engineering Framework (ICEPOT)
+The engineering constraints were redesigned using the structured ICEPOT Framework to extract production-grade test artifacts.
+
+[Instruction]
+- [Mandatory] Enforce strict file format and size restrictions during validation.
+- [Mandatory] Generate explicit, dual-track Positive and Negative test conditions.
+- [Mandatory] Include metadata columns: Precondition, Priority, Status, TestData, Bug#, Execution Status, Assignee, Comments.
+- [High Priority] Embed a dedicated tracking sheet for real-time execution status metrics.
+- [Optional] Supply a structured Test Data Matrix including sample stub names.
+- [Mandatory] Inject specialized Security Validation test cases.
+
+[Context]
+Acting as an enterprise Test Lead designing an institutional test suite for an identity-verification application requiring users to submit government-issued personal documents under strict security, file type, and volume thresholds.
+
+[Example]
+Validating the successful submission of front and back copies of an national ID (Aadhar Card) restricted exclusively to a clean JPEG format.
+
+[Persona]
+Senior QA Test Lead / QA Architect.
+
+[Output Format]
+Production-ready downloadable Excel (.xlsx) spreadsheet with multi-tab structure.
+
+[Tone]
+Rigorous, highly technical, and strictly professional QA documentation standard.
+
+------------------------------
+## 3. Comparative Output Analysis## 📉 Base Generation (Via Weak Prompt)
+A raw checklist lacking operational structure, specific test attributes, or execution tracking fields.
+
+* Functional Basics: Basic verification of successful uploads, native system drag-and-drop triggers, and standard browser file explorer actions.
+* Generic Extensions: High-level validation guidelines targeting arbitrary formats (.jpg, .pdf, .csv) and standalone execution blocks (.exe).
+* Unmapped Sizes: Surface-level instructions to test maximum capacities without numeric data inputs or null/zero-byte validation fields.
+* Superficial Edge Cases: Basic instructions targeting network disconnection anomalies and lengthy file string arrays.
+
+------------------------------
+## 🚀 Advanced Generation (Via ICEPOT Optimization)
+A highly technical, multi-dimensional test artifact containing precise validation rules and enterprise management metadata.
+## 📊 Sheet 1: Real-Time Execution Dashboard
+Tracks program health, target verification milestones, and global readiness metrics:
+$$\text{Pass Rate \%} = \left( \frac{\text{Passed Cases}}{\text{Total Executed Cases}} \right) \times 100$$ 
+
+* Metrics Tracked: Total Cases ⋅ Not Run ⋅ Passed ⋅ Failed ⋅ Blocked ⋅ Pass Percentage.
+
+## 📝 Sheet 2: Master Test Suite Matrix
+Execution Fields Included: Precondition | Priority | Status | Test Data | Bug# | Execution Status | Assignee | Comments
+## 🟢 Positive Validation Matrices
+
+* TC_001 [High]: Verify successful upload of Aadhar Card (Front) in native JPEG format utilizing standard boundary inputs (≤ 2 MB).
+* TC_002 [High]: Verify successful upload of Aadhar Card (Back) in native JPEG format under standard volume constraints (≤ 1.5 MB).
+* TC_003 [Medium]: Verify successful database ingestion of a system PAN Card copy formatted in PDF exactly at the lowest processing boundary (10 KB).
+* TC_004 [High]: Verify system structural processing of a high-resolution Passport document in PNG format resting exactly at the upper system limit (5 MB).
+
+## 🔴 Negative Validation Matrices
+
+* TC_005 [High]: Confirm appropriate UI error message firing when a user attempts to upload an oversized document (large_aadhar.jpeg at 6.2 MB).
+* TC_006 [Medium]: Verify application exception layer handling when blocking an invalid processing request containing a zero-byte (empty) file.
+* TC_007 [High]: Ensure the security layer actively blocks illegal formats and returns clean warning flags when presented with system executable extensions (malicious_script.exe).
+* TC_008 [High]: Evaluate validation robust design against content-spoofing attacks (e.g., intercepting and rejecting an executable payload manually renamed with a .jpeg suffix).
+
+## 🔒 Mandatory Security & Vulnerability Matrices
+
+* TC_009 [Critical]: Ensure integrated perimeter defenses intercept, neutralize, and quarantine file streams carrying known signature payloads using standard test variables (eicar_com.zip).
+* TC_010 [Critical]: Verify that input sanitization protocols strip or reject embedded Cross-Site Scripting (XSS) scripts or harmful injection vectors concealed inside a document's EXIF metadata fields.
+* TC_011 [High]: Verify application-level immunity to Path Traversal Attacks attempting server-side directory injection through manipulated string arrays (e.g., file names structurally mapped as ../../../../etc/passwd.pdf).
+
+## 🗂️ Sheet 3: Dedicated Test Data Matrix
+
+| Document Profile Class | Explicit Permitted Formats | Upper Boundary Limit | Synthetic File Identifier | Target Execution Output |
+|---|---|---|---|---|
+| Aadhar Card (Front) | JPEG, PNG, PDF | 5 MB | aadhar_front.jpeg | HTTP 200 OK / SUCCESS |
+| Aadhar Card (Back) | JPEG, PNG, PDF | 5 MB | aadhar_back.jpeg | HTTP 200 OK / SUCCESS |
+| PAN Card Document | JPEG, PNG, PDF | 5 MB | pan_card.pdf | HTTP 200 OK / SUCCESS |
+| Malicious Executable | Strict Reject (None) | N/A | malicious_script.exe | 415 Unsupported Media / ERROR |
+| Oversized Asset File | JPEG, PNG, PDF | 5 MB | huge_photo.jpeg (7MB) | 413 Payload Too Large / ERROR |
+
+------------------------------
+
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+Scenario #02: Test the Search Feature
+
+# 1. Weak Prompt
+
+### Prompt
+
+> "Test the search feature."
+
+### Identified Gaps
+
+* No product domain specified (e.g., e-commerce, healthcare).
+* No requirement for filter or sort validations.
+* No scenarios for empty or invalid inputs.
+* No security validation requirements.
+* No performance expectations defined.
+* No specified output format.
+* No persona to guide the response perspective.
+
+### Output Generated
+
+> The search feature has been tested successfully and is fully functional. The system successfully parsed your request, executed a query across its indexed data structure, and retrieved comprehensive resources outlining standard software engineering practices for verifying search text box behavior.
+
+#### Core Verification Matrix
+
+* **Functional Input Validation:** Verifying how the system handles valid keywords, empty queries, special characters, and varying text lengths.
+* **Algorithmic Relevance:** Ensuring the engine sorts indexed content based on precision, keyword weight, and contextual matching.
+* **Data Integrity & Retrieval:** Validating that returned results map correctly to source metadata.
+* **Performance Tracking:** Measuring response times and UI rendering performance.
+
+### Analysis of Weak Prompt Output
+
+| Aspect               | Observation                                      |
+| -------------------- | ------------------------------------------------ |
+| Specificity          | Generic response with limited actionable details |
+| Test Coverage        | Partial coverage of functional areas             |
+| Test Format          | No standardized format                           |
+| Automation Readiness | Not suitable for BDD automation                  |
+| Security Testing     | Missing                                          |
+| Performance Criteria | Vague and non-measurable                         |
+| Negative Testing     | Limited coverage                                 |
+
+---
+
+# 2. Improved Prompt Using ICEPOT Framework
+
+## Instruction
+
+[MANDATORY] Generate test cases for context-based search functionality in an online shopping application.
+[MANDATORY] Generate test cases to validate search suggestions displayed based on the product entered by the user.
+[MANDATORY] Generate test cases to verify that the application allows search using text, voice, and image inputs.
+[MANDATORY] Generate test cases to validate input restrictions, including minimum/maximum search input length and file upload validations (supported formats and size limits).
+[MANDATORY] Generate security validation test cases for the search functionality, including input sanitization and malicious upload prevention.
+[HIGH PRIORITY] Generate test cases to validate response time calculations for:
+Search result retrieval
+Auto-suggestion display
+Voice search processing
+Image search processing
+Search performance under peak load conditions
+
+## Context
+
+Design test cases as a **QA Lead** for the **Search Feature of an Online Shopping Application**.
+
+## Example
+
+> Search for "fast selling mobile"
+
+## Persona
+
+Act as a **Test Lead** with expertise in functional, security, and performance testing.
+
+## Output Format
+
+Generate test cases in **Gherkin format**.
+
+## Tone
+
+Professional and industry-standard.
+
+---
+
+# Output Generated Using ICEPOT Framework
+
+## Feature: Search Functionality for Online Shopping Application
+
+### Coverage Areas Included
+
+### 1. Context-Based Search Validation
+
+* Trending keyword search
+* Category-based search
+* Brand-specific search
+
+### 2. Search Suggestions Validation
+
+* Auto-suggestion display
+* Suggestion ranking
+* Suggestion selection behavior
+
+### 3. Multi-Modal Search Validation
+
+* Text search
+* Voice search
+* Voice permission denial scenarios
+* Image-based search
+* Unsupported image format validation
+
+### 4. Input Restriction Validation
+
+* Minimum input length validation
+* Maximum input length validation
+* Special character validation
+* File size restrictions
+* Supported file type validations
+
+### 5. Security Validation
+
+* SQL Injection prevention
+* Cross-Site Scripting (XSS) prevention
+* Malicious file upload prevention
+* Sensitive information exposure checks
+* Rate limiting validation
+
+### 6. Performance Validation (High Priority)
+
+* Search response time (< 2 seconds)
+* Auto-suggestion response time (< 500 ms)
+* Voice search response time (< 3 seconds)
+* Image search response time (< 5 seconds)
+* Concurrent user load testing
+* Large catalog performance testing
+
+---
+
+# Comparison: Weak Prompt vs ICEPOT Prompt
+
+| Criteria                | Weak Prompt | ICEPOT Prompt       |
+| ----------------------- | ----------- | ------------------- |
+| Context Provided        | ❌ No        | ✅ Yes               |
+| Domain Specificity      | ❌ Generic   | ✅ Online Shopping   |
+| Persona Defined         | ❌ No        | ✅ Test Lead         |
+| Output Structure        | ❌ Narrative | ✅ Gherkin Format    |
+| Functional Coverage     | ⚠️ Partial  | ✅ Comprehensive     |
+| Security Validation     | ❌ Missing   | ✅ Included          |
+| Performance Metrics     | ⚠️ Generic  | ✅ Quantifiable SLAs |
+| Negative Test Scenarios | ❌ Limited   | ✅ Extensive         |
+| Automation Ready        | ❌ No        | ✅ Yes               |
+| Industry Best Practices | ⚠️ Limited  | ✅ Followed          |
+
+---
+
+# Conclusion
+
+The weak prompt resulted in a high-level descriptive response that lacked actionable and measurable test scenarios. By applying the **ICEPOT framework**, the prompt became precise and context-rich, enabling the generation of comprehensive Gherkin test cases covering functional, negative, security, and performance aspects.
+
+### Key Learning
+
+**Well-structured prompts significantly improve the quality, completeness, and usability of AI-generated QA artifacts.**
+
+The ICEPOT framework transforms ambiguous requirements into automation-ready test scenarios aligned with industry standards.
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+# Scenario #03: Test the Cart Functionality
+
+## Weak Prompt
+
+**Test the cart functionality**
+
+## What I Feel is Missing
+
+* No validation for add, remove, or update cart actions.
+* No verification of total price calculation based on quantity.
+* No coupon or referral discount validation scenarios.
+* No delivery charge calculation scenarios.
+* No stock availability or out-of-stock handling validation.
+* No validation for promo code expiry time limits.
+* Missing both positive and negative test scenarios.
+
+---
+
+# ICEPOT Framework
+
+## I – Instruction
+
+* **[Mandatory]** Generate test cases to calculate total price based on book price and quantity.
+* **[Mandatory]** Generate test cases to apply discounts based on referral codes.
+* **[Mandatory]** Generate test cases to add delivery charges to the final amount.
+* **[Mandatory]** Generate test cases to display out-of-stock messages based on book availability.
+* **[Mandatory]** Generate test cases to add, remove, and edit books available in the cart.
+* **[Optional]** Generate test cases to display currently available discount details.
+* **[High Priority]** Include both positive and negative test cases.
+* **[Optional]** Generate test cases to validate timer limits for promo code discounts.
+
+## C – Context
+
+As a **Test Lead**, generate test cases to validate the **Cart Functionality** for an **Online Book Shop**. The validation should ensure accurate calculation of the total payable amount, application of discounts based on referral or promo codes, delivery charge calculation, stock availability checks, and cart management operations based on the number of books selected.
+
+## E – Example
+
+**Example Scenario:**
+
+Apply **"WELCOME50"** discount to items in the cart for first-time users and verify that the discount is correctly reflected in the final payable amount.
+
+## P – Persona
+
+Generate the test cases from the perspective of a **Test Lead** with a focus on comprehensive coverage of critical cart functionalities.
+
+## O – Output Format
+
+Generate the output in **Gherkin format** using **Given–When–Then** syntax.
+
+## T – Tone
+
+The test cases should be **concise, professional, and easy to understand**, following industry-standard testing practices.
+
+---
+
+# Expected Output (Gherkin Format)
+
+```gherkin
+Feature: Validate Cart Functionality for Online Book Shop
+
+  Background:
+    Given the user has accessed the online book shop
+    And books are available for purchase
+
+  @Mandatory @HighPriority @Positive
+  Scenario: Calculate total price based on price and quantity
+    Given the user adds a book priced at ₹500 with quantity 3 to the cart
+    When the cart total is calculated
+    Then the total price should be ₹1500
+
+  @Mandatory @HighPriority @Negative
+  Scenario: Validate total price calculation with invalid quantity
+    Given the user adds a book priced at ₹500 with quantity 0 to the cart
+    When the cart total is calculated
+    Then an error message "Invalid quantity selected" should be displayed
+
+  @Mandatory @HighPriority @Positive
+  Scenario: Apply discount using a valid referral code
+    Given the user has books worth ₹2000 in the cart
+    And the user enters a valid referral code "WELCOME50"
+    When the discount is applied
+    Then the applicable discount should be deducted from the total amount
+    And the final payable amount should be displayed correctly
+
+  @Mandatory @HighPriority @Negative
+  Scenario: Apply discount using an invalid referral code
+    Given the user has books worth ₹2000 in the cart
+    When the user enters an invalid referral code "INVALID50"
+    Then an error message "Referral code is invalid or expired" should be displayed
+    And no discount should be applied
+
+  @Mandatory @HighPriority @Positive
+  Scenario: Add delivery charge to the final amount
+    Given the user has books worth ₹1000 in the cart
+    And a delivery charge of ₹50 is applicable
+    When the final amount is calculated
+    Then the payable amount should be ₹1050
+
+  @Mandatory @HighPriority @Negative
+  Scenario: Verify no delivery charge when free shipping criteria is met
+    Given the user has books worth ₹3000 in the cart
+    And free delivery is applicable for orders above ₹2500
+    When the final amount is calculated
+    Then no delivery charge should be added
+
+  @Mandatory @HighPriority @Positive
+  Scenario: Display out-of-stock message for unavailable books
+    Given a selected book is unavailable in inventory
+    When the user views the cart
+    Then the status "Out of Stock" should be displayed
+    And checkout should be restricted for that item
+
+  @Mandatory @HighPriority @Negative
+  Scenario: Prevent adding out-of-stock books to cart
+    Given a book is marked as out of stock
+    When the user attempts to add the book to the cart
+    Then the system should prevent the addition
+    And display the message "Book is currently unavailable"
+
+  @Mandatory @HighPriority @Positive
+  Scenario: Remove a book from the cart
+    Given the user has books added to the cart
+    When the user removes a selected book from the cart
+    Then the book should be removed successfully
+    And the cart total should be updated accordingly
+
+  @Mandatory @HighPriority @Positive
+  Scenario: Edit quantity of books in the cart
+    Given the user has a book with quantity 1 in the cart
+    When the user updates the quantity to 3
+    Then the cart should reflect the updated quantity
+    And the total amount should be recalculated correctly
+
+  @Mandatory @HighPriority @Negative
+  Scenario: Update cart with quantity exceeding available stock
+    Given only 5 copies of a book are available
+    When the user updates the quantity to 10
+    Then the system should display the message "Requested quantity exceeds available stock"
+    And the quantity should not be updated
+
+  @Optional @Positive
+  Scenario: Display available discount details in the cart
+    Given active promotions are available
+    When the user views the cart page
+    Then all applicable discount offers should be displayed
+
+  @Optional @Positive
+  Scenario: Apply promo code within validity period
+    Given the promo code "BOOK20" is active until 11:59 PM today
+    When the user applies the promo code before expiry
+    Then the discount should be applied successfully
+
+  @Optional @Negative
+  Scenario: Reject expired promo code based on timer limit
+    Given the promo code "BOOK20" has expired
+    When the user attempts to apply the promo code
+    Then the system should display the message "Promo code has expired"
+    And no discount should be applied
+```
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
